@@ -2,7 +2,7 @@ func summaryRanges(nums []int) []string {
     n := len(nums)
     res := []string{}
     if n == 0 {
-        return []string{}
+        res
     }
     
     if n == 1 {
