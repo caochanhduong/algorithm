@@ -9,20 +9,20 @@ func summaryRanges(nums []int) []string {
         return []string{strconv.Itoa(nums[0])}
     }
     
-    tmp := nums[0]
+    lowerNum := nums[0]
     
     for i := 0; i < n; i++ {
         if i < n - 1 && nums[i] + 1 != nums[i+1] || i == n - 1 {
-            if nums[i] != tmp {
-                res = append(res, fmt.Sprintf("%d->%d", tmp, nums[i]))
+            if nums[i] != lowerNum {
+                res = append(res, fmt.Sprintf("%d->%d", lowerNum, nums[i]))
                 if i < n - 1 {
-                    tmp = nums[i+1]
+                    lowerNum = nums[i+1]
                 }
                 continue
             }
             res = append(res, strconv.Itoa(tmp))
             if i < n - 1 {
-                tmp = nums[i+1]
+                lowerNum = nums[i+1]
             }
         }
     }
